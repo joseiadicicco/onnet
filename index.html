@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On Net — Infraestructura de telecomunicaciones y redes críticas</title>
+<meta name="description" content="Ingeniería, montaje, puesta en servicio y mantenimiento de infraestructura de telecomunicaciones: radiobases móviles, radioenlaces de microondas, fibra óptica, datacenter, CCTV, SOC y sistemas de energía. Buenos Aires, Argentina.">
+<meta property="og:title" content="On Net — Infraestructura de telecomunicaciones y redes críticas">
+<meta property="og:description" content="Del sitio de radio a la sala de racks. Ingeniería, montaje, puesta en servicio y mantenimiento de redes críticas.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://onnet.com.ar/">
+<link rel="canonical" href="https://onnet.com.ar/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23072338'/%3E%3Ccircle cx='32' cy='32' r='13' fill='none' stroke='%23F0A83C' stroke-width='6'/%3E%3C/svg%3E">
+
+<style>
+:root{
+  --navy:#072338;
+  --navy-2:#0C3454;
+  --navy-3:#123F63;
+  --blue:#14608F;
+  --cyan:#35A7D9;
+  --amber:#F0A83C;
+  --paper:#FFFFFF;
+  --paper-2:#F4F7F9;
+  --paper-3:#E9EFF3;
+  --line:#D5DEE5;
+  --line-dk:#1B4767;
+  --tx:#10212E;
+  --tx-mute:#57697A;
+  --tx-inv:#EAF2F7;
+  --tx-inv-mute:#95AFC4;
+  --maxw:1140px;
+  --pad:clamp(20px,5vw,52px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--tx);font-family:"Archivo",system-ui,sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+h1,h2,h3{font-weight:600;line-height:1.14;letter-spacing:-.02em}
+a{color:inherit}
+.mono{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:500}
+
+/* header */
+.top{position:sticky;top:0;z-index:60;background:rgba(7,35,56,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-dk)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo .on{background:var(--amber);color:var(--navy);font-weight:700;font-size:17px;letter-spacing:.06em;padding:4px 9px;border-radius:3px}
+.logo .net{color:var(--tx-inv);font-weight:600;font-size:17px;letter-spacing:.16em}
+.nav{display:flex;gap:28px;align-items:center}
+.nav a{color:var(--tx-inv-mute);text-decoration:none;font-size:14.5px;transition:color .18s}
+.nav a:hover,.nav a:focus-visible{color:var(--amber)}
+.nav .cta{border:1px solid var(--cyan);color:var(--cyan);padding:8px 16px;border-radius:3px}
+.nav .cta:hover{background:var(--cyan);color:var(--navy)}
+@media(max-width:900px){.nav a:not(.cta){display:none}}
+
+/* hero */
+.hero{background:var(--navy);color:var(--tx-inv);border-bottom:4px solid var(--amber)}
+.hero .wrap{padding-top:clamp(58px,8vw,92px);padding-bottom:clamp(48px,6vw,72px)}
+.hero .mono{color:var(--amber);margin-bottom:20px;display:block}
+.hero h1{font-size:clamp(33px,5.4vw,58px);max-width:19ch;margin-bottom:22px}
+.hero h1 span{color:var(--cyan)}
+.hero .lede{font-size:clamp(16.5px,1.8vw,19px);color:var(--tx-inv-mute);max-width:62ch}
+.chain{margin-top:46px;background:var(--navy-2);border:1px solid var(--line-dk);border-radius:5px;padding:22px 20px 16px;overflow-x:auto}
+.chain .mono{color:var(--tx-inv-mute);margin-bottom:14px}
+.chain svg{display:block;min-width:640px;width:100%;height:auto}
+
+/* sections */
+section{padding:clamp(56px,7.5vw,96px) 0}
+.shead{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.shead .bar{width:26px;height:2px;background:var(--amber);flex-shrink:0}
+.shead .mono{color:var(--blue)}
+h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:14px}
+.sintro{color:var(--tx-mute);max-width:68ch;margin-bottom:44px}
+
+/* matrix */
+.mwrap{overflow-x:auto;border:1px solid var(--line);border-radius:5px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14.5px}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line)}
+thead th{background:var(--paper-2);font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--tx-mute);white-space:nowrap}
+thead th:first-child{width:33%}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--paper-2)}
+td.svc strong{display:block;font-weight:600;font-size:15.5px;margin-bottom:2px}
+td.svc span{color:var(--tx-mute);font-size:13.5px;line-height:1.5;display:block}
+td.dot{text-align:center;width:12%}
+.d{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--blue)}
+.d.no{background:transparent;border:1px solid var(--line)}
+.legend{display:flex;gap:22px;margin-top:14px;flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--tx-mute)}
+
+/* vendors */
+.vend{background:var(--navy);color:var(--tx-inv)}
+.vend h2{color:var(--tx-inv)}
+.vend .sintro{color:var(--tx-inv-mute)}
+.vend .shead .mono{color:var(--cyan)}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:12px}
+.vgrid div{border:1px solid var(--line-dk);border-radius:4px;padding:18px 16px;transition:border-color .18s,background .18s}
+.vgrid div:hover{border-color:var(--cyan);background:var(--navy-2)}
+.vgrid b{display:block;font-size:15px;font-weight:600;letter-spacing:.02em}
+.vgrid small{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-top:6px}
+
+/* why */
+.why{background:var(--paper-2)}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
+.card{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:4px;padding:26px 24px 28px}
+.card .mono{color:var(--blue);display:block;margin-bottom:12px}
+.card h3{font-size:18px;margin-bottom:9px}
+.card p{font-size:14.5px;color:var(--tx-mute);line-height:1.62}
+
+/* process */
+.steps{counter-reset:s;display:grid;gap:0}
+.pstep{display:grid;grid-template-columns:62px 1fr;gap:24px;padding:24px 0;border-top:1px solid var(--line)}
+.pstep:last-child{border-bottom:1px solid var(--line)}
+.pstep .n{font-family:"JetBrains Mono",monospace;font-size:26px;font-weight:500;color:var(--paper-3);line-height:1}
+.pstep h3{font-size:18px;margin-bottom:6px}
+.pstep p{color:var(--tx-mute);font-size:15px;max-width:70ch}
+@media(max-width:600px){.pstep{grid-template-columns:1fr;gap:8px}}
+
+/* contact */
+.contact{background:var(--navy);color:var(--tx-inv)}
+.contact h2{color:var(--tx-inv);max-width:20ch}
+.contact .lede{color:var(--tx-inv-mute);max-width:58ch;margin-bottom:40px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;padding-top:32px;border-top:1px solid var(--line-dk)}
+.cgrid .mono{color:var(--amber);display:block;margin-bottom:8px}
+.cgrid a,.cgrid span.v{color:var(--tx-inv);text-decoration:none;font-size:16.5px;border-bottom:1px solid transparent;transition:border-color .18s}
+.cgrid a:hover,.cgrid a:focus-visible{border-bottom-color:var(--amber)}
+
+footer{background:#04182A;color:var(--tx-inv-mute);padding:26px 0;font-size:13px;border-top:1px solid var(--line-dk)}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="On Net, inicio">
+      <span class="on">ON</span><span class="net">NET</span>
+    </a>
+    <nav class="nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#tecnologias">Tecnologías</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#nosotros">Nosotros</a>
+      <a class="cta" href="#contacto">Solicitar visita</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="mono">Buenos Aires · Argentina</span>
+    <h1>Construimos y mantenemos la red <span>completa</span>, punta a punta.</h1>
+    <p class="lede">Desde el sitio de radio hasta la sala de racks: ingeniería, provisión, montaje, puesta en servicio y mantenimiento de infraestructura de telecomunicaciones y sistemas críticos.</p>
+
+    <div class="chain">
+      <span class="mono">Alcance típico de un despliegue</span>
+      <svg viewBox="0 0 900 132" role="img" aria-label="Cadena de infraestructura: sitio remoto, radioenlace de microondas, nodo de agregación, fibra óptica, datacenter y centro de monitoreo, con energía como base transversal.">
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+            <path d="M1 1L9 5L1 9" fill="none" stroke="#35A7D9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+
+        <g fill="none" stroke="#35A7D9" stroke-width="1.6" marker-end="url(#ar)">
+          <line x1="132" y1="42" x2="182" y2="42"/>
+          <line x1="302" y1="42" x2="352" y2="42"/>
+          <line x1="472" y1="42" x2="522" y2="42"/>
+          <line x1="642" y1="42" x2="692" y2="42"/>
+        </g>
+
+        <g>
+          <rect x="12" y="16" width="120" height="52" rx="4" fill="#123F63" stroke="#1B4767"/>
+          <text x="72" y="40" text-anchor="middle" fill="#EAF2F7" font-family="Archivo,sans-serif" font-size="13.5" font-weight="600">Sitio remoto</text>
+          <text x="72" y="56" text-anchor="middle" fill="#95AFC4" font-family="JetBrains Mono,monospace" font-size="9.5" letter-spacing="0.08em">TORRE · RBS</text>
+
+          <rect x="182" y="16" width="120" height="52" rx="4" fill="#123F63" stroke="#1B4767"/>
+          <text x="242" y="40" text-anchor="middle" fill="#EAF2F7" font-family="Archivo,sans-serif" font-size="13.5" font-weight="600">Radioenlace</text>
+          <text x="242" y="56" text-anchor="middle" fill="#95AFC4" font-family="JetBrains Mono,monospace" font-size="9.5" letter-spacing="0.08em">MICROONDAS</text>
+
+          <rect x="352" y="16" width="120" height="52" rx="4" fill="#123F63" stroke="#1B4767"/>
+          <text x="412" y="40" text-anchor="middle" fill="#EAF2F7" font-family="Archivo,sans-serif" font-size="13.5" font-weight="600">Nodo</text>
+          <text x="412" y="56" text-anchor="middle" fill="#95AFC4" font-family="JetBrains Mono,monospace" font-size="9.5" letter-spacing="0.08em">AGREGACIÓN</text>
+
+          <rect x="522" y="16" width="120" height="52" rx="4" fill="#123F63" stroke="#1B4767"/>
+          <text x="582" y="40" text-anchor="middle" fill="#EAF2F7" font-family="Archivo,sans-serif" font-size="13.5" font-weight="600">Fibra óptica</text>
+          <text x="582" y="56" text-anchor="middle" fill="#95AFC4" font-family="JetBrains Mono,monospace" font-size="9.5" letter-spacing="0.08em">TRANSPORTE</text>
+
+          <rect x="692" y="16" width="196" height="52" rx="4" fill="#0C3454" stroke="#35A7D9"/>
+          <text x="790" y="40" text-anchor="middle" fill="#EAF2F7" font-family="Archivo,sans-serif" font-size="13.5" font-weight="600">Datacenter y NOC/SOC</text>
+          <text x="790" y="56" text-anchor="middle" fill="#95AFC4" font-family="JetBrains Mono,monospace" font-size="9.5" letter-spacing="0.08em">GESTIÓN · MONITOREO</text>
+        </g>
+
+        <rect x="12" y="88" width="876" height="34" rx="4" fill="none" stroke="#F0A83C" stroke-width="1.2" stroke-dasharray="5 4"/>
+        <text x="450" y="110" text-anchor="middle" fill="#F0A83C" font-family="JetBrains Mono,monospace" font-size="10.5" letter-spacing="0.12em">SISTEMAS DE ENERGÍA · PUESTA A TIERRA · PROTECCIÓN ATMOSFÉRICA</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" class="rv">
+  <div class="wrap">
+    <div class="shead"><span class="bar"></span><span class="mono">01 — Servicios</span></div>
+    <h2>Qué hacemos, y hasta dónde</h2>
+    <p class="sintro">No tercerizamos el núcleo del trabajo. Esta matriz muestra en qué etapa del ciclo de vida intervenimos en cada disciplina, para que sepa exactamente qué puede pedirnos y qué no.</p>
+
+    <div class="mwrap">
+      <table>
+        <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Matriz de servicios por etapa del ciclo de vida</caption>
+        <thead>
+          <tr>
+            <th scope="col">Disciplina</th>
+            <th scope="col">Ingeniería</th>
+            <th scope="col">Provisión</th>
+            <th scope="col">Montaje</th>
+            <th scope="col">Puesta en servicio</th>
+            <th scope="col">Mantenimiento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="svc"><strong>Radiobases móviles</strong><span>2G, 3G y 4G. Greenfield, rooftop y swap. Torres, mástiles, sistemas radiantes, feeders y gabinetes.</span></td>
+            <td class="dot"><span class="d" title="Sí"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td>
+          </tr>
+          <tr>
+            <td class="svc"><strong>Radioenlaces de microondas</strong><span>Perfil y línea de vista, cálculo de enlace, antenas parabólicas, ODU/IDU, alineación y mediciones.</span></td>
+            <td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td>
+          </tr>
+          <tr>
+            <td class="svc"><strong>Fibra óptica</strong><span>Tendidos aéreos y subterráneos, cámaras y ductos, empalmes por fusión, ODF, certificación OTDR.</span></td>
+            <td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td>
+          </tr>
+          <tr>
+            <td class="svc"><strong>Datacenter y servidores</strong><span>Salas técnicas, racks, cableado estructurado, servidores físicos y virtualizados, respaldo y monitoreo.</span></td>
+            <td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td>
+          </tr>
+          <tr>
+            <td class="svc"><strong>CCTV y control de acceso</strong><span>Videovigilancia IP, control de acceso, integración con plataformas de gestión y grabación.</span></td>
+            <td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td>
+          </tr>
+          <tr>
+            <td class="svc"><strong>Centros de operaciones (NOC/SOC)</strong><span>Diseño e implementación: infraestructura, puestos de operación, videowall y plataformas de gestión.</span></td>
+            <td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td>
+          </tr>
+          <tr>
+            <td class="svc"><strong>Gestión de red y wifi metropolitano</strong><span>Sistemas NMS, monitoreo y alarmas. Redes wifi de exterior en topología mesh sobre mobiliario urbano.</span></td>
+            <td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td>
+          </tr>
+          <tr>
+            <td class="svc"><strong>Sistemas de energía</strong><span>Tableros, rectificadores, bancos de baterías, respaldo, puesta a tierra y protección atmosférica.</span></td>
+            <td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td>
+          </tr>
+          <tr>
+            <td class="svc"><strong>Obra civil asociada</strong><span>Bases, canalizaciones, cámaras y recintos. Coordinada con terceros bajo nuestra supervisión.</span></td>
+            <td class="dot"><span class="d"></span></td><td class="dot"><span class="d no"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d"></span></td><td class="dot"><span class="d no"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legend">
+      <span><i class="d" style="display:inline-block"></i> Servicio propio</span>
+      <span><i class="d no" style="display:inline-block"></i> Coordinamos con terceros</span>
+    </div>
+  </div>
+</section>
+
+<section id="tecnologias" class="vend rv">
+  <div class="wrap">
+    <div class="shead"><span class="bar"></span><span class="mono">02 — Tecnologías</span></div>
+    <h2>Experiencia de campo por fabricante</h2>
+    <p class="sintro">Equipamiento con el que trabajamos en instalación, puesta en servicio y mantenimiento.</p>
+    <div class="vgrid">
+      <div><b>Ericsson</b><small>Radio · Core</small></div>
+      <div><b>Huawei</b><small>Radio · Transporte</small></div>
+      <div><b>NEC</b><small>Microondas</small></div>
+      <div><b>SIAE</b><small>Microondas</small></div>
+      <div><b>Harris</b><small>Transmisión</small></div>
+      <div><b>Stratex</b><small>Transmisión</small></div>
+      <div><b>BelAir</b><small>Wifi metropolitano</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="proceso" class="rv">
+  <div class="wrap">
+    <div class="shead"><span class="bar"></span><span class="mono">03 — Proceso</span></div>
+    <h2>Cómo trabajamos</h2>
+    <p class="sintro">El mismo procedimiento para un sitio o para doscientos. Lo que cambia es la escala, no el rigor.</p>
+    <div class="steps">
+      <div class="pstep"><span class="n">01</span><div><h3>Relevamiento en sitio</h3><p>Visita técnica sin cargo. Verificamos condiciones existentes, factibilidad de energía, accesos y permisos, con registro fotográfico. Sin relevamiento no emitimos presupuesto cerrado.</p></div></div>
+      <div class="pstep"><span class="n">02</span><div><h3>Ingeniería de detalle</h3><p>Memoria técnica, planos, cómputo de materiales y cronograma. Usted aprueba un documento revisable, no una promesa verbal.</p></div></div>
+      <div class="pstep"><span class="n">03</span><div><h3>Ejecución</h3><p>Montaje e instalación con personal propio, elementos de protección personal, seguro de responsabilidad civil y ART vigentes. Reporte de avance con la periodicidad que se acuerde.</p></div></div>
+      <div class="pstep"><span class="n">04</span><div><h3>Puesta en servicio</h3><p>Protocolo de pruebas de aceptación firmado, mediciones certificadas y entrega de documentación conforme a obra.</p></div></div>
+      <div class="pstep"><span class="n">05</span><div><h3>Mantenimiento</h3><p>Preventivo programado y correctivo con tiempos de respuesta comprometidos por contrato. Opcional en todos nuestros trabajos.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" class="why rv">
+  <div class="wrap">
+    <div class="shead"><span class="bar"></span><span class="mono">04 — Nosotros</span></div>
+    <h2>Por qué On Net</h2>
+    <p class="sintro">Nacimos del trabajo de campo, no de una oficina comercial. El equipo estuvo arriba de la torre, adentro de la cámara y en la sala de energía a las tres de la mañana.</p>
+    <div class="wgrid">
+      <div class="card">
+        <span class="mono">Alcance</span>
+        <h3>Una sola contraparte</h3>
+        <p>Radio, transmisión, fibra, datacenter, seguridad electrónica y energía en el mismo proveedor. Sin coordinar cinco empresas que se echan la culpa entre sí.</p>
+      </div>
+      <div class="card">
+        <span class="mono">Documentación</span>
+        <h3>Entregamos papeles</h3>
+        <p>Planos conforme a obra, protocolos de prueba y mediciones certificadas. Si mañana cambia de proveedor, su red queda documentada.</p>
+      </div>
+      <div class="card">
+        <span class="mono">Presupuesto</span>
+        <h3>Precio cerrado tras relevar</h3>
+        <p>No cotizamos a ciegas ni ajustamos por sorpresas previsibles. Lo que no se pueda cerrar, se aclara por escrito antes de firmar.</p>
+      </div>
+      <div class="card">
+        <span class="mono">Criterio</span>
+        <h3>Lo que falla, falla de noche</h3>
+        <p>Un enlace mal alineado, una fusión sucia o una puesta a tierra mal calculada no fallan el día de la instalación. Fallan seis meses después. Trabajamos para que eso no pase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact rv">
+  <div class="wrap">
+    <div class="shead"><span class="bar"></span><span class="mono">05 — Contacto</span></div>
+    <h2>Solicite una visita técnica</h2>
+    <p class="lede">La visita de relevamiento no tiene costo ni compromiso. De ahí sale un presupuesto cerrado y un cronograma realista.</p>
+    <div class="cgrid">
+      <div><span class="mono">Correo</span><a href="mailto:info@onnet.com.ar">info@onnet.com.ar</a></div>
+      <div><span class="mono">Teléfono</span><a href="tel:+5491162978103">+54 9 11 6297-8103</a></div>
+      <div><span class="mono">Cobertura</span><span class="v">CABA, AMBA e interior</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> On Net. Todos los derechos reservados.</span>
+    <span class="mono">onnet.com.ar</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var els=document.querySelectorAll('.rv');
+if(window.IntersectionObserver&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -60px 0px'});
+  els.forEach(function(el){io.observe(el);});
+}else{els.forEach(function(el){el.classList.add('in');});}
+</script>
+</body>
+</html>
