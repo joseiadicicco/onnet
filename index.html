@@ -14,16 +14,78 @@
     section{padding:105px 0}.light{background:var(--paper);color:var(--ink)}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:46px}.kicker{color:#008aa3;text-transform:uppercase;letter-spacing:2px;font-weight:800;font-size:12px}.section-head h2{font-size:clamp(36px,4vw,54px);line-height:1.06;letter-spacing:-2px;margin:10px 0 0;max-width:700px}.section-head p{color:#607581;max-width:440px;margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid #dce6ea;border-radius:10px;padding:30px;min-height:250px;transition:.25s}.card:hover{transform:translateY(-5px);box-shadow:0 16px 45px rgba(12,49,68,.1);border-color:#98dce6}.icon{width:46px;height:46px;border-radius:8px;background:#e5f8fb;color:#007e99;display:grid;place-items:center;font-size:22px;font-weight:900}.card h3{font-size:20px;margin:25px 0 10px}.card p{font-size:14px;color:#647985;margin:0}.projects{background:#081b2a}.project-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.project{position:relative;min-height:420px;border-radius:12px;overflow:hidden;background:#0e3046}.project img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.8) brightness(.55);transition:.4s}.project:hover img{transform:scale(1.035);filter:saturate(1) brightness(.5)}.project-content{position:absolute;inset:auto 0 0;padding:34px;background:linear-gradient(transparent,rgba(4,17,27,.96))}.tag{display:inline-flex;padding:6px 10px;border-radius:5px;background:var(--cyan);color:#03202a;text-transform:uppercase;font-size:10px;letter-spacing:1.2px;font-weight:900}.project h3{font-size:27px;margin:14px 0 6px}.project p{color:#c2d2d9;margin:0;font-size:14px}.project.wide{grid-column:1/-1;min-height:390px}.project.wide img{object-position:center 48%}
     .trust{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}.trust-photo{position:relative}.trust-photo img{width:100%;max-height:570px;object-fit:cover;border-radius:12px}.badge{position:absolute;right:-24px;bottom:34px;background:var(--cyan);color:#03202a;padding:20px;border-radius:9px;font-weight:900;max-width:180px}.list{display:grid;gap:18px;margin-top:34px}.list-item{display:grid;grid-template-columns:44px 1fr;gap:15px}.check{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#dff5f8;color:#007e99;font-weight:900}.list-item strong{display:block}.list-item span{color:#647985;font-size:14px}
     .brands{padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#061521}.brands p{text-align:center;color:#738d9b;text-transform:uppercase;letter-spacing:2px;font-size:11px;margin:0 0 24px}.brand-row{display:flex;justify-content:center;gap:46px;flex-wrap:wrap;color:#b9cbd4;font-weight:800;letter-spacing:.5px}.cta{padding:100px 0;background:linear-gradient(120deg,#0094ad,#00c2d8);color:#03202a}.cta-box{display:flex;align-items:center;justify-content:space-between;gap:40px}.cta h2{font-size:clamp(36px,5vw,62px);line-height:1;margin:0;letter-spacing:-2px;max-width:750px}.cta .btn{background:#071827;color:white;border-color:#071827;flex:none}footer{padding:54px 0 28px}.foot{display:grid;grid-template-columns:1fr auto;gap:40px}.foot p{color:#7e96a3;max-width:560px;font-size:14px}.footlinks{display:flex;gap:25px;color:#b9cbd4;font-size:14px;align-items:start}.copy{margin-top:42px;padding-top:22px;border-top:1px solid var(--line);color:#617985;font-size:12px;display:flex;justify-content:space-between}
-    .reveal{opacity:0;transform:translateY(18px);transition:.65s ease}.reveal.visible{opacity:1;transform:none}
-    @media(max-width:900px){.navlinks a:not(.btn){display:none}.hero-grid,.trust{grid-template-columns:1fr}.network-card{display:none}.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid #dbe5e9}.cards{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr}.project.wide{grid-column:auto}.section-head,.cta-box{align-items:start;flex-direction:column}.badge{right:15px}.hero{min-height:auto}}@media(max-width:620px){.wrap{width:min(100% - 26px,var(--max))}nav{height:68px}.navlinks{display:none}.menu{display:block}.hero{padding:126px 0 80px}.hero h1{font-size:48px;letter-spacing:-2.5px}.lead{font-size:17px}.stats{margin-top:-24px}.stats-grid{grid-template-columns:1fr 1fr}.stat{padding:22px 18px}.stat strong{font-size:28px}section{padding:78px 0}.cards{grid-template-columns:1fr}.project{min-height:400px}.section-head{display:block}.section-head p{margin-top:18px}.foot{grid-template-columns:1fr}.footlinks{flex-wrap:wrap}.copy{gap:20px;flex-direction:column}}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .68s ease,transform .68s cubic-bezier(.2,.75,.25,1)}.reveal.visible{opacity:1;transform:none}
+
+    /* Identidad ON NET */
+    .brand-logo{position:relative;display:inline-flex;align-items:center;padding:7px 13px 6px;border:1px solid rgba(104,224,237,.34);border-radius:12px;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(229,248,251,.92));box-shadow:0 9px 30px rgba(0,185,214,.13);overflow:hidden;transition:transform .28s ease,box-shadow .28s ease}
+    .brand-logo:after{content:"";position:absolute;inset:-80% auto -80% -45%;width:34%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);transform:rotate(18deg);transition:left .65s ease}
+    .brand-logo:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(0,185,214,.24)}
+    .brand-logo:hover:after{left:120%}
+    .brand-logo img{position:relative;z-index:1;width:145px;height:auto}
+    .footer-logo{margin-bottom:14px}
+
+    /* Sistema orbital animado */
+    .network-card{isolation:isolate}
+    .network-card:before{inset:3%;border:1px dashed rgba(104,224,237,.23);animation:spin 30s linear infinite}
+    .network-card:after{inset:18%;border:0;background:radial-gradient(circle,rgba(104,224,237,.12),transparent 67%);animation:glow 4.5s ease-in-out infinite}
+    .orbit{position:absolute;z-index:2;border:1px solid rgba(104,224,237,.31);border-radius:50%;animation:spin 18s linear infinite}
+    .orbit-outer{inset:7%;animation-duration:21s}
+    .orbit-middle{inset:21%;border-style:dashed;animation-duration:15s;animation-direction:reverse}
+    .orbit-inner{inset:34%;animation-duration:10s}
+    .orbital{position:absolute;width:13px;height:13px;border:2px solid rgba(255,255,255,.72);border-radius:50%;background:var(--cyan2);box-shadow:0 0 10px var(--cyan),0 0 24px rgba(0,185,214,.75)}
+    .orbit-outer .orbital:first-child{top:-7px;left:50%}
+    .orbit-outer .orbital:last-child{right:8%;bottom:17%}
+    .orbit-middle .orbital:first-child{left:-7px;top:47%}
+    .orbit-middle .orbital:last-child{right:16%;top:3%}
+    .orbit-inner .orbital{left:48%;bottom:-7px}
+    .core{z-index:4;position:relative;flex-direction:column;line-height:1;letter-spacing:-.8px;animation:coreFloat 4s ease-in-out infinite}
+    .core span{font-size:19px}
+    .core small{margin-top:7px;font-size:9px;letter-spacing:2.1px}
+    .core:after{content:"";position:absolute;inset:-12px;border:1px solid rgba(104,224,237,.45);border-radius:50%;animation:pulseRing 2.8s ease-out infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes glow{50%{opacity:.48;transform:scale(1.08)}}
+    @keyframes coreFloat{50%{transform:translateY(-7px);box-shadow:0 0 68px rgba(0,185,214,.62)}}
+    @keyframes pulseRing{0%{opacity:.75;transform:scale(.88)}75%,100%{opacity:0;transform:scale(1.32)}}
+
+    /* Fichas con profundidad, brillo y movimiento */
+    .cards{perspective:1100px}
+    .card{--rx:0deg;--ry:0deg;--lift:0px;--mx:50%;--my:50%;position:relative;overflow:hidden;transform-style:preserve-3d;transform:perspective(900px) translateY(var(--lift)) rotateX(var(--rx)) rotateY(var(--ry));transition:opacity .68s ease,transform .24s ease,box-shadow .3s ease,border-color .3s ease}
+    .card.reveal{opacity:0;--lift:18px;transform:perspective(900px) translateY(var(--lift)) rotateX(var(--rx)) rotateY(var(--ry))}
+    .card.reveal.visible{opacity:1;--lift:0px;transform:perspective(900px) translateY(var(--lift)) rotateX(var(--rx)) rotateY(var(--ry))}
+    .card:hover{--lift:-8px;box-shadow:0 22px 52px rgba(12,49,68,.15);border-color:#73d1df}
+    .card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx) var(--my),rgba(104,224,237,.25),transparent 34%);opacity:0;pointer-events:none;transition:opacity .25s}
+    .card:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--cyan),var(--cyan2));transform:scaleX(0);transform-origin:left;transition:transform .32s ease}
+    .card:hover:before{opacity:1}.card:hover:after{transform:scaleX(1)}
+    .card .icon,.card h3,.card p{position:relative;z-index:1;transform:translateZ(18px)}
+    .card .icon{transition:transform .3s ease,background .3s ease,color .3s ease}
+    .card:hover .icon{transform:translateZ(25px) rotate(-7deg) scale(1.1);background:var(--cyan);color:#03202a}
+    .stat{position:relative;overflow:hidden;transition:transform .28s ease,background .28s ease}
+    .stat:after{content:"";position:absolute;inset:auto 0 0;height:3px;background:var(--cyan);transform:scaleX(0);transition:transform .3s ease}
+    .stat:hover{transform:translateY(-5px);background:#f2fbfd}.stat:hover:after{transform:scaleX(1)}
+    .project{transition:transform .35s ease,box-shadow .35s ease}
+    .project:hover{transform:translateY(-7px);box-shadow:0 24px 60px rgba(0,0,0,.26)}
+    .project:after{content:"";position:absolute;inset:0;z-index:1;border:1px solid transparent;border-radius:12px;pointer-events:none;transition:border-color .3s}
+    .project:hover:after{border-color:rgba(104,224,237,.48)}
+    .project-content{z-index:2}
+    .project--plan img{filter:saturate(.3) brightness(.82) contrast(1.05);object-position:center}
+    .project--plan:hover img{filter:saturate(.55) brightness(.72) contrast(1.08)}
+    .brand-row span{position:relative;padding:4px 0;transition:color .24s ease,transform .24s ease}
+    .brand-row span:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--cyan);transform:scaleX(0);transition:transform .24s ease}
+    .brand-row span:hover{color:white;transform:translateY(-3px)}.brand-row span:hover:after{transform:scaleX(1)}
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}.network-card:before,.network-card:after,.orbit,.core,.core:after{animation:none}
+      .reveal,.card,.project,.brand-logo,.stat{transition:none}
+    }
+    @media(max-width:900px){.navlinks a:not(.btn){display:none}.hero-grid,.trust{grid-template-columns:1fr}.network-card{display:none}.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid #dbe5e9}.cards{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr}.project.wide{grid-column:auto}.section-head,.cta-box{align-items:start;flex-direction:column}.badge{right:15px}.hero{min-height:auto}}@media(max-width:620px){.wrap{width:min(100% - 26px,var(--max))}nav{height:68px}.brand-logo{padding:5px 10px}.brand-logo img{width:124px}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:15px 20px 22px;background:rgba(5,19,31,.98);border-bottom:1px solid var(--line);box-shadow:0 18px 32px rgba(0,0,0,.28)}.navlinks.open{display:flex}.navlinks.open a{display:flex;padding:12px}.menu{display:block}.hero{padding:126px 0 80px}.hero h1{font-size:48px;letter-spacing:-2.5px}.lead{font-size:17px}.stats{margin-top:-24px}.stats-grid{grid-template-columns:1fr 1fr}.stat{padding:22px 18px}.stat strong{font-size:28px}section{padding:78px 0}.cards{grid-template-columns:1fr}.project{min-height:400px}.section-head{display:block}.section-head p{margin-top:18px}.foot{grid-template-columns:1fr}.footlinks{flex-wrap:wrap}.copy{gap:20px;flex-direction:column}}
   </style>
 </head>
 <body>
   <header class="topbar">
     <nav class="wrap">
-      <a class="brand" href="#inicio" aria-label="OnNet inicio">ON<span>NET</span></a>
-      <div class="navlinks"><a href="#servicios">Servicios</a><a href="#proyectos">Experiencia</a><a href="#empresa">Empresa</a><a class="btn" href="mailto:contacto@onnet.com.ar">Contactar</a></div>
-      <button class="menu" aria-label="Abrir menú" onclick="document.querySelector('.navlinks').style.display='flex'">☰</button>
+      <a class="brand-logo" href="#inicio" aria-label="On Net, inicio"><img src="assets/onnet-logo.png" alt="On Net"></a>
+      <div class="navlinks" id="navlinks"><a href="#servicios">Servicios</a><a href="#proyectos">Experiencia</a><a href="#empresa">Empresa</a><a class="btn" href="mailto:contacto@onnet.com.ar">Contactar</a></div>
+      <button class="menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navlinks" onclick="toggleMenu(this)">☰</button>
     </nav>
   </header>
 
@@ -36,7 +98,12 @@
           <p class="lead">Diseñamos, desplegamos y mantenemos soluciones de telecomunicaciones, conectividad y seguridad electrónica en todo el país.</p>
           <div class="actions"><a class="btn" href="#proyectos">Ver experiencia <span>→</span></a><a class="btn outline" href="#servicios">Nuestras soluciones</a></div>
         </div>
-        <div class="network-card" aria-hidden="true"><span class="node n1"></span><span class="node n2"></span><span class="node n3"></span><span class="node n4"></span><span class="node n5"></span><div class="core">ONNET<br>NETWORK</div></div>
+        <div class="network-card" aria-hidden="true">
+          <div class="orbit orbit-outer"><span class="orbital"></span><span class="orbital"></span></div>
+          <div class="orbit orbit-middle"><span class="orbital"></span><span class="orbital"></span></div>
+          <div class="orbit orbit-inner"><span class="orbital"></span></div>
+          <div class="core"><span>ON NET</span><small>NETWORKS</small></div>
+        </div>
       </div>
     </section>
 
@@ -62,7 +129,7 @@
     <section class="projects" id="proyectos"><div class="wrap">
       <div class="section-head reveal"><div><div class="kicker">Experiencia comprobada</div><h2>Proyectos que no pueden fallar</h2></div><p>Infraestructura diseñada para responder en aeropuertos, redes nacionales, eventos masivos y centros de alta exigencia.</p></div>
       <div class="project-grid">
-        <article class="project reveal"><img src="assets/ezeiza-plano.jpg" alt="Plano conforme a obra del sistema CCTV del Aeropuerto Internacional de Ezeiza"><div class="project-content"><span class="tag">Seguridad aeroportuaria</span><h3>Aeropuerto Internacional de Ezeiza</h3><p>Sistema de seguridad para las Terminales A y B.</p></div></article>
+        <article class="project project--plan reveal"><img src="assets/ezeiza-plano.jpg" alt="Plano técnico del Aeropuerto Internacional de Ezeiza" loading="lazy"><div class="project-content"><span class="tag">Seguridad aeroportuaria</span><h3>Aeropuerto Internacional de Ezeiza</h3><p>Sistema de seguridad para las Terminales A y B.</p></div></article>
         <article class="project reveal"><img src="assets/visa-open-nordelta.png" alt="Plano de conectividad del VISA Open de Argentina en Nordelta Golf Club"><div class="project-content"><span class="tag">Evento masivo</span><h3>VISA Open de Argentina</h3><p>Internet para asistentes, organización y comercios en todo el barrio Golf de Nordelta. Tres ediciones consecutivas junto a la AAG.</p></div></article>
         <article class="project wide reveal"><img src="assets/visa-open-olivos.png" alt="Plano de cobertura del VISA Open de Argentina en Olivos Golf Club"><div class="project-content"><span class="tag">Conectividad de alta densidad</span><h3>Golf internacional: AAG y R&A</h3><p>Infraestructura para torneos de gran escala, incluyendo Internet para el evento R&A Pilar Golf 2023 y servicios para The Royal and Ancient Golf Club of St Andrews.</p></div></article>
       </div>
@@ -79,16 +146,49 @@
       </div>
     </div></section>
 
-    <div class="brands"><div class="wrap"><p>Experiencia en proyectos para organizaciones líderes</p><div class="brand-row"><span>CLARO</span><span>MOVISTAR</span><span>TELECOM</span><span>ROCHE</span><span>AAG</span><span>THE R&A</span><span>BIOWELLNESS</span></div></div></div>
+    <div class="brands"><div class="wrap"><p>Experiencia en proyectos para organizaciones líderes</p><div class="brand-row"><span>CLARO</span><span>MOVISTAR</span><span>TELECOM</span><span>TELEFÓNICA</span><span>ROCHE</span><span>AAG</span><span>THE R&amp;A</span></div></div></div>
     <section class="cta" id="contacto"><div class="wrap cta-box"><h2>Conversemos sobre su próximo desafío tecnológico.</h2><a class="btn" href="mailto:contacto@onnet.com.ar?subject=Consulta%20desde%20onnet.com.ar">Solicitar una propuesta <span>→</span></a></div></section>
   </main>
 
-  <footer><div class="wrap"><div class="foot"><div><a class="brand" href="#inicio">ON<span>NET</span></a><p>Telecomunicaciones, conectividad y seguridad electrónica para empresas y operaciones críticas en Argentina.</p></div><div class="footlinks"><a href="#servicios">Servicios</a><a href="#proyectos">Experiencia</a><a href="mailto:contacto@onnet.com.ar">Contacto</a></div></div><div class="copy"><span>© <span id="year"></span> OnNet. Todos los derechos reservados.</span><span>Argentina · onnet.com.ar</span></div></div></footer>
+  <footer><div class="wrap"><div class="foot"><div><a class="brand-logo footer-logo" href="#inicio" aria-label="On Net, inicio"><img src="assets/onnet-logo.png" alt="On Net"></a><p>Telecomunicaciones, conectividad y seguridad electrónica para empresas y operaciones críticas en Argentina.</p></div><div class="footlinks"><a href="#servicios">Servicios</a><a href="#proyectos">Experiencia</a><a href="mailto:contacto@onnet.com.ar">Contacto</a></div></div><div class="copy"><span>© <span id="year"></span> On Net. Todos los derechos reservados.</span><span>Argentina · onnet.com.ar</span></div></div></footer>
 
   <script>
     document.getElementById('year').textContent=new Date().getFullYear();
-    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealItems=[...document.querySelectorAll('.reveal')];
+    revealItems.forEach((el,index)=>el.style.transitionDelay=`${Math.min(index%6,5)*65}ms`);
+    if(reducedMotion){revealItems.forEach(el=>el.classList.add('visible'))}
+    else{
+      const io=new IntersectionObserver(entries=>entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('visible');io.unobserve(entry.target)}
+      }),{threshold:.12});
+      revealItems.forEach(el=>io.observe(el));
+    }
+    document.querySelectorAll('.card').forEach(card=>{
+      card.addEventListener('pointermove',event=>{
+        if(reducedMotion||event.pointerType==='touch')return;
+        const rect=card.getBoundingClientRect();
+        const x=(event.clientX-rect.left)/rect.width;
+        const y=(event.clientY-rect.top)/rect.height;
+        card.style.setProperty('--ry',`${(x-.5)*8}deg`);
+        card.style.setProperty('--rx',`${(.5-y)*8}deg`);
+        card.style.setProperty('--mx',`${x*100}%`);
+        card.style.setProperty('--my',`${y*100}%`);
+      });
+      card.addEventListener('pointerleave',()=>{
+        card.style.setProperty('--ry','0deg');
+        card.style.setProperty('--rx','0deg');
+      });
+    });
+    function toggleMenu(button){
+      const links=document.getElementById('navlinks');
+      const open=links.classList.toggle('open');
+      button.setAttribute('aria-expanded',String(open));
+    }
+    document.querySelectorAll('#navlinks a').forEach(link=>link.addEventListener('click',()=>{
+      document.getElementById('navlinks').classList.remove('open');
+      document.querySelector('.menu').setAttribute('aria-expanded','false');
+    }));
   </script>
 </body>
 </html>
