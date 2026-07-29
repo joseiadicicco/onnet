@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="OnNet: infraestructura de telecomunicaciones, seguridad electrónica, radioenlaces, redes y conectividad para operaciones críticas en toda la Argentina.">
+  <meta name="description" content="OnNet: más de 20 años de experiencia en telecomunicaciones, seguridad electrónica, radioenlaces, redes, conectividad y capacitaciones tecnológicas en toda la Argentina.">
   <meta name="theme-color" content="#071827">
   <title>OnNet | Telecomunicaciones e infraestructura crítica</title>
   <style>
@@ -17,7 +17,7 @@
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .68s ease,transform .68s cubic-bezier(.2,.75,.25,1)}.reveal.visible{opacity:1;transform:none}
 
     /* Identidad ON NET */
-    .brand-logo{position:relative;display:inline-flex;align-items:center;padding:7px 13px 6px;border:1px solid rgba(104,224,237,.34);border-radius:12px;background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(229,248,251,.92));box-shadow:0 9px 30px rgba(0,185,214,.13);overflow:hidden;transition:transform .28s ease,box-shadow .28s ease}
+    .brand-logo{position:relative;display:inline-flex;align-items:center;padding:7px 13px 6px;border:1px solid #fff;border-radius:12px;background:#fff;box-shadow:0 9px 30px rgba(0,185,214,.13);overflow:hidden;transition:transform .28s ease,box-shadow .28s ease}
     .brand-logo:after{content:"";position:absolute;inset:-80% auto -80% -45%;width:34%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);transform:rotate(18deg);transition:left .65s ease}
     .brand-logo:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(0,185,214,.24)}
     .brand-logo:hover:after{left:120%}
@@ -69,6 +69,12 @@
     .project-content{z-index:2}
     .project--plan img{filter:saturate(.3) brightness(.82) contrast(1.05);object-position:center}
     .project--plan:hover img{filter:saturate(.55) brightness(.72) contrast(1.08)}
+    .project--diagram{background:#fff}
+    .project--diagram img{object-fit:contain;background:#fff;padding:18px 18px 122px;filter:saturate(.78) brightness(.98) contrast(1.03)}
+    .project--diagram:hover img{transform:scale(1.025);filter:saturate(1) brightness(.96) contrast(1.04)}
+    .project--diagram .project-content{background:linear-gradient(transparent,rgba(4,17,27,.98) 48%)}
+    .project--training img{object-position:center 43%;filter:grayscale(1) contrast(1.04) brightness(.68)}
+    .project--training:hover img{filter:grayscale(.35) saturate(.75) contrast(1.05) brightness(.62)}
     .brand-row span{position:relative;padding:4px 0;transition:color .24s ease,transform .24s ease}
     .brand-row span:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--cyan);transform:scaleX(0);transition:transform .24s ease}
     .brand-row span:hover{color:white;transform:translateY(-3px)}.brand-row span:hover:after{transform:scaleX(1)}
@@ -77,14 +83,15 @@
       html{scroll-behavior:auto}.network-card:before,.network-card:after,.orbit,.core,.core:after{animation:none}
       .reveal,.card,.project,.brand-logo,.stat{transition:none}
     }
-    @media(max-width:900px){.navlinks a:not(.btn){display:none}.hero-grid,.trust{grid-template-columns:1fr}.network-card{display:none}.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid #dbe5e9}.cards{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr}.project.wide{grid-column:auto}.section-head,.cta-box{align-items:start;flex-direction:column}.badge{right:15px}.hero{min-height:auto}}@media(max-width:620px){.wrap{width:min(100% - 26px,var(--max))}nav{height:68px}.brand-logo{padding:5px 10px}.brand-logo img{width:124px}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:15px 20px 22px;background:rgba(5,19,31,.98);border-bottom:1px solid var(--line);box-shadow:0 18px 32px rgba(0,0,0,.28)}.navlinks.open{display:flex}.navlinks.open a{display:flex;padding:12px}.menu{display:block}.hero{padding:126px 0 80px}.hero h1{font-size:48px;letter-spacing:-2.5px}.lead{font-size:17px}.stats{margin-top:-24px}.stats-grid{grid-template-columns:1fr 1fr}.stat{padding:22px 18px}.stat strong{font-size:28px}section{padding:78px 0}.cards{grid-template-columns:1fr}.project{min-height:400px}.section-head{display:block}.section-head p{margin-top:18px}.foot{grid-template-columns:1fr}.footlinks{flex-wrap:wrap}.copy{gap:20px;flex-direction:column}}
+    .contact-block{display:flex;align-items:center;gap:28px;flex:none}.contact-number{font-size:20px;font-weight:900;white-space:nowrap}.contact-number small{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:.72;margin-bottom:3px}.whatsapp-float{position:fixed;z-index:45;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#052f18;font-weight:1000;font-size:22px;border:2px solid rgba(255,255,255,.82);box-shadow:0 12px 35px rgba(0,0,0,.3);transition:transform .22s ease,box-shadow .22s ease}.whatsapp-float:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 17px 42px rgba(0,0,0,.36)}
+    @media(max-width:900px){.navlinks a:not(.btn){display:none}.hero-grid,.trust{grid-template-columns:1fr}.network-card{display:none}.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid #dbe5e9}.cards{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr}.project.wide{grid-column:auto}.section-head,.cta-box{align-items:start;flex-direction:column}.contact-block{align-items:flex-start;flex-direction:column;gap:16px}.badge{right:15px}.hero{min-height:auto}}@media(max-width:620px){.wrap{width:min(100% - 26px,var(--max))}nav{height:68px}.brand-logo{padding:5px 10px}.brand-logo img{width:124px}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:15px 20px 22px;background:rgba(5,19,31,.98);border-bottom:1px solid var(--line);box-shadow:0 18px 32px rgba(0,0,0,.28)}.navlinks.open{display:flex}.navlinks.open a{display:flex;padding:12px}.menu{display:block}.hero{padding:126px 0 80px}.hero h1{font-size:48px;letter-spacing:-2.5px}.lead{font-size:17px}.stats{margin-top:-24px}.stats-grid{grid-template-columns:1fr 1fr}.stat{padding:22px 18px}.stat strong{font-size:26px}section{padding:78px 0}.cards{grid-template-columns:1fr}.project{min-height:400px}.section-head{display:block}.section-head p{margin-top:18px}.foot{grid-template-columns:1fr}.footlinks{flex-wrap:wrap}.copy{gap:20px;flex-direction:column}.whatsapp-float{right:15px;bottom:15px;width:54px;height:54px}}
   </style>
 </head>
 <body>
   <header class="topbar">
     <nav class="wrap">
       <a class="brand-logo" href="#inicio" aria-label="On Net, inicio"><img src="assets/onnet-logo.png" alt="On Net"></a>
-      <div class="navlinks" id="navlinks"><a href="#servicios">Servicios</a><a href="#proyectos">Experiencia</a><a href="#empresa">Empresa</a><a class="btn" href="mailto:contacto@onnet.com.ar">Contactar</a></div>
+      <div class="navlinks" id="navlinks"><a href="#servicios">Servicios</a><a href="#proyectos">Experiencia</a><a href="#empresa">Empresa</a><a class="btn" href="https://wa.me/5491162978103?text=Hola%20On%20Net%2C%20quisiera%20realizar%20una%20consulta." target="_blank" rel="noopener">Contactar por WhatsApp</a></div>
       <button class="menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navlinks" onclick="toggleMenu(this)">☰</button>
     </nav>
   </header>
@@ -111,7 +118,7 @@
       <div class="stat"><strong>+500</strong><span>sitios de telecomunicaciones</span></div>
       <div class="stat"><strong>+300</strong><span>sitios ejecutados para Claro</span></div>
       <div class="stat"><strong>+200</strong><span>sitios ejecutados para Movistar</span></div>
-      <div class="stat"><strong>3 años</strong><span>elegidos para VISA Open</span></div>
+      <div class="stat"><strong>+20 años</strong><span>de experiencia en telecomunicaciones</span></div>
     </div></div>
 
     <section class="light" id="servicios"><div class="wrap">
@@ -130,8 +137,10 @@
       <div class="section-head reveal"><div><div class="kicker">Experiencia comprobada</div><h2>Proyectos que no pueden fallar</h2></div><p>Infraestructura diseñada para responder en aeropuertos, redes nacionales, eventos masivos y centros de alta exigencia.</p></div>
       <div class="project-grid">
         <article class="project project--plan reveal"><img src="assets/ezeiza-plano.jpg" alt="Plano técnico del Aeropuerto Internacional de Ezeiza" loading="lazy"><div class="project-content"><span class="tag">Seguridad aeroportuaria</span><h3>Aeropuerto Internacional de Ezeiza</h3><p>Sistema de seguridad para las Terminales A y B.</p></div></article>
+        <article class="project project--diagram reveal"><img src="assets/osde-alem-diagrama.png" alt="Diagrama técnico del despliegue de red inalámbrica en el edificio corporativo de OSDE" loading="lazy"><div class="project-content"><span class="tag">Red corporativa</span><h3>OSDE · Av. Leandro N. Alem 1067</h3><p>Despliegue de red inalámbrica en edificio corporativo de 19 pisos.</p></div></article>
         <article class="project reveal"><img src="assets/visa-open-nordelta.png" alt="Plano de conectividad del VISA Open de Argentina en Nordelta Golf Club"><div class="project-content"><span class="tag">Evento masivo</span><h3>VISA Open de Argentina</h3><p>Internet para asistentes, organización y comercios en todo el barrio Golf de Nordelta. Tres ediciones consecutivas junto a la AAG.</p></div></article>
-        <article class="project wide reveal"><img src="assets/visa-open-olivos.png" alt="Plano de cobertura del VISA Open de Argentina en Olivos Golf Club"><div class="project-content"><span class="tag">Conectividad de alta densidad</span><h3>Golf internacional: AAG y R&A</h3><p>Infraestructura para torneos de gran escala, incluyendo Internet para el evento R&A Pilar Golf 2023 y servicios para The Royal and Ancient Golf Club of St Andrews.</p></div></article>
+        <article class="project reveal"><img src="assets/visa-open-olivos.png" alt="Plano de cobertura del VISA Open de Argentina en Olivos Golf Club"><div class="project-content"><span class="tag">Conectividad de alta densidad</span><h3>Golf internacional: AAG y R&A</h3><p>Infraestructura para torneos de gran escala, incluyendo Internet para el evento R&A Pilar Golf 2023 y servicios para The Royal and Ancient Golf Club of St Andrews.</p></div></article>
+        <article class="project wide project--training reveal"><img src="assets/capacitacion-roche.png" alt="Capacitación sobre tecnología brindada por On Net en Laboratorios Roche" loading="lazy"><div class="project-content"><span class="tag">Formación especializada</span><h3>Capacitaciones sobre tecnología</h3><p>Diseñamos y dictamos capacitaciones técnicas para empresas y equipos profesionales. Capacitación sobre tecnología en Laboratorios Roche.</p></div></article>
       </div>
     </div></section>
 
@@ -146,11 +155,12 @@
       </div>
     </div></section>
 
-    <div class="brands"><div class="wrap"><p>Experiencia en proyectos para organizaciones líderes</p><div class="brand-row"><span>CLARO</span><span>MOVISTAR</span><span>TELECOM</span><span>TELEFÓNICA</span><span>ROCHE</span><span>AAG</span><span>THE R&amp;A</span></div></div></div>
-    <section class="cta" id="contacto"><div class="wrap cta-box"><h2>Conversemos sobre su próximo desafío tecnológico.</h2><a class="btn" href="mailto:contacto@onnet.com.ar?subject=Consulta%20desde%20onnet.com.ar">Solicitar una propuesta <span>→</span></a></div></section>
+    <div class="brands"><div class="wrap"><p>Experiencia en proyectos para organizaciones líderes</p><div class="brand-row"><span>CLARO</span><span>MOVISTAR</span><span>TELECOM</span><span>TELEFÓNICA</span><span>OSDE</span><span>ROCHE</span><span>AAG</span><span>THE R&amp;A</span></div></div></div>
+    <section class="cta" id="contacto"><div class="wrap cta-box"><h2>Conversemos sobre su próximo desafío tecnológico.</h2><div class="contact-block"><a class="contact-number" href="tel:+5491162978103"><small>Contacto directo</small>+54 9 11 6297-8103</a><a class="btn" href="https://wa.me/5491162978103?text=Hola%20On%20Net%2C%20quisiera%20solicitar%20una%20propuesta." target="_blank" rel="noopener">Enviar WhatsApp <span>→</span></a></div></div></section>
   </main>
 
-  <footer><div class="wrap"><div class="foot"><div><a class="brand-logo footer-logo" href="#inicio" aria-label="On Net, inicio"><img src="assets/onnet-logo.png" alt="On Net"></a><p>Telecomunicaciones, conectividad y seguridad electrónica para empresas y operaciones críticas en Argentina.</p></div><div class="footlinks"><a href="#servicios">Servicios</a><a href="#proyectos">Experiencia</a><a href="mailto:contacto@onnet.com.ar">Contacto</a></div></div><div class="copy"><span>© <span id="year"></span> On Net. Todos los derechos reservados.</span><span>Argentina · onnet.com.ar</span></div></div></footer>
+  <footer><div class="wrap"><div class="foot"><div><a class="brand-logo footer-logo" href="#inicio" aria-label="On Net, inicio"><img src="assets/onnet-logo.png" alt="On Net"></a><p>Telecomunicaciones, conectividad, seguridad electrónica y capacitaciones tecnológicas para empresas y operaciones críticas en Argentina.</p></div><div class="footlinks"><a href="#servicios">Servicios</a><a href="#proyectos">Experiencia</a><a href="tel:+5491162978103">+54 9 11 6297-8103</a><a href="https://wa.me/5491162978103?text=Hola%20On%20Net%2C%20quisiera%20realizar%20una%20consulta." target="_blank" rel="noopener">WhatsApp</a></div></div><div class="copy"><span>© <span id="year"></span> On Net. Todos los derechos reservados.</span><span>Argentina · onnet.com.ar</span></div></div></footer>
+  <a class="whatsapp-float" href="https://wa.me/5491162978103?text=Hola%20On%20Net%2C%20quisiera%20realizar%20una%20consulta." target="_blank" rel="noopener" aria-label="Contactar a On Net por WhatsApp">WA</a>
 
   <script>
     document.getElementById('year').textContent=new Date().getFullYear();
